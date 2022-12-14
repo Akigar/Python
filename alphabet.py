@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+#from scipy.misc import face
 from skimage.measure import regionprops, label
 from skimage.morphology import erosion, dilation
 
@@ -74,6 +74,15 @@ for reg in regions:
 print(result)
 #print(recognize(regions[8])) #1 - B, 3 - 8
 
+summ = 0
+for i in result:
+    summ += result[i]
+print("Summ symbols", summ)
+
+for i in result:
+    result[i] = str(result[i] / 4) + "%"
+print(result)
+
 #plt.imshow(regions[8].image)
-print(np.max(lb) == sum(result.values()))
+#print(np.max(lb) == sum(result.values()))
 plt.show()
