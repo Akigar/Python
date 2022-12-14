@@ -77,7 +77,7 @@ print(result)
 summ = 0
 for i in result:
     summ += result[i]
-print("Summ symbols", summ)
+print("Summ symbols: ", summ)
 
 for i in result:
     result[i] = str(result[i] / 4) + "%"
